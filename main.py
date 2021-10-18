@@ -5,12 +5,12 @@ from tkinter import messagebox, font
 import re
 
 def check_pattern():
-    pattern = re.compile(r'^(([12][0-9]|0[1-9])[\/\-]02|([12][0-9]|0[1-9]|3[01])[\/\-](0[13578]|1[02])|([12][0-9]|0[1-9]|30)[\/\-](0[469]|11))[\/\-][0-9]{2,4}$')
+    
+    pattern = re.compile(r'^((([12][0-9]|0[1-9])[\/\-]02|([12][0-9]|0[1-9]|3[01])[\/\-](0[13578]|1[02])|([12][0-9]|0[1-9]|30)[\/\-](0[469]|11))[\/\-][0-9]{2,4}|[0-9]{2,4}[\/\-](02[\/\-]([12][0-9]|0[1-9])|(0[13578]|1[02])[\/\-]([12][0-9]|0[1-9]|3[01])|(0[469]|11)[\/\-]([12][0-9]|0[1-9]|30)))$')
     fecha = text_field.get()
     if len(fecha) != 0:
         res = re.match (pattern,fecha)
         if res:
-            print(fecha)
             messagebox.showinfo(message=f'{fecha}--- Formato válido', title='Resultado')
         else:
             messagebox.showinfo(message=f'{fecha}--- Formato inválido', title='Resultado')
@@ -35,3 +35,4 @@ if __name__ == '__main__':
 
 
     root.mainloop()
+     
