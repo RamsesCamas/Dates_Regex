@@ -19,7 +19,7 @@ def check_pattern():
 
 if __name__ == '__main__':
     root = Tk()
-    root.title('Fechas Regex')
+    root.title('Validador de formato de fechas')
     root.geometry('600x300')
     label_title = Label(root,text='Validador de fechas',width=19,height=1)
     label_title['font'] = font.Font(size=13)
